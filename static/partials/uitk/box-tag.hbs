@@ -1,0 +1,15 @@
+<div class="{{this.cssClass}} {{this.classes}}"{{#if this.id}} id="{{this.id}}"{{/if}}{{{dataAttributes}}}>
+    {{#if title}}
+        <header class="box-title">
+            {{#if this.typeIsSimple}}
+                <h3 class="title-main">{{{this.title}}}</h3>
+            {{else}}
+                <h4 class="title-main">{{{this.title}}}</h4>
+            {{/if}}
+            {{#if this.subTitle}}
+                <p class="title-sub">{{{this.subTitle}}}</p>
+            {{/if}}
+        </header>
+    {{/if}}
+    {{{this.content}}}
+</div>

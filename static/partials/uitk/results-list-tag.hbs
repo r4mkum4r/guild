@@ -1,0 +1,17 @@
+{{#if includeTemplateOuterWrapIsTrue}}
+    <ul{{#if id}} id="{{id}}"{{/if}} class="segmented-list results-list{{classes}}" {{{dataAttributes}}}>
+{{/if}}
+{{#if outputTemplate}}
+    {{#if preTemplateContent}} {{{preTemplateContent}}} {{/if}}
+    {{#with templateContent}}
+        {{> partials/uitk/results-segment}}
+    {{/with}}
+    {{#if postTemplateContent}} {{{postTemplateContent}}} {{/if}}
+{{else}}
+    {{#each segments}}
+        {{> partials/uitk/results-segment}}
+    {{/each}}
+{{/if}}
+{{#if includeTemplateOuterWrapIsTrue}}
+    </ul>
+{{/if}}

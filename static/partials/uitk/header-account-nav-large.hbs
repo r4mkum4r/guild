@@ -1,0 +1,49 @@
+<a id="account-nav-desktop-toggle" href="#" class="account-nav-toggle last nav-item" data-control="tooltip" data-content-id="account-nav-desktop" data-pos="bc" data-prevent-flip="true">
+    <div class="left">
+        <div>{{title}} {{firstname}} {{lastname}}</div>
+        <div class="secondary">{{companyName}}</div>
+    </div>
+    <i class="icon icon-caret180"></i>
+</a>
+
+<div id="account-nav-desktop" class="visuallyhidden">
+    <div class="account-nav">
+        <div class="user-control-bar cf">
+            <div id="user-menu-username" class="left secondary">
+                <div id="user-name">
+                    <b>{{title}} {{firstname}} {{lastname}}</b>
+                    <span>({{pos}})</span>
+                </div>
+                <div id="company-name">{{companyName}}</div>
+            </div>
+            <div class="secondary right">
+                <a id="{{profile.id}}" href="{{profile.url}}" class="btn btn-text-sub-action btn-small btn-no-margin">
+                    <span class="btn-label">{{profile.label}}</span>
+                </a>
+            </div>
+        </div>
+        {{#if profiles}}
+            <ul id="user-menu-profiles">
+                {{#each profiles}}
+                    <li class="user-menu-profile user-layout"><span>{{name}}</span><a id="{{productId}}" href="{{url}}">{{label}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        <div class="cf">
+            {{#if availableLanguages}}
+                <div class="input-group left select">
+                    <select id="locale-chooser" name="egencia_locale">
+                        {{#each availableLanguages}}
+                            <option value="{{this.locale}}" {{#if this.selected}}selected{{/if}}>{{this.language}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            {{/if}}
+            {{#with logout}}
+                <a id="{{id}}" href="{{url}}" class="btn btn-text-sub-action btn-small btn-no-margin right">
+                    <span class="btn-label">{{label}}</span>
+                </a>
+            {{/with}}
+        </div>
+    </div>
+</div>

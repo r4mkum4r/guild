@@ -1,0 +1,121 @@
+<card>
+  <style>
+    .interactive {
+      cursor: pointer;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card-action {
+      padding: 0 5px;
+      cursor: pointer;
+    }
+
+    .icon.icon-edit {
+      color: #3799cf;
+    }
+
+    .icon.icon-trash {
+      color: #e75c5c;
+    }
+  </style>
+
+  <div class="box {interactive: isInteractable && canEdit}" onclick={onClickCard}>
+    <div class="box-padded">
+      <div class="card-header">
+        <header>
+          <yield from="header"></yield>
+        </header>
+        <div class="card-actions">
+          <span class="card-action" if={canEdit}>
+            <i class="icon icon-edit" onclick={editCard}></i>
+          </span>
+          <span class="card-action" if={canDelete}>
+            <i class="icon icon-trash" onclick={deleteCard}></i>
+          </span>
+        </div>
+      </div>
+      <div class="card-content">
+        {data}
+        <yield from="content"></yield>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var self,
+      EVENTS;
+
+    EVENTS = {
+      edit: 'EDIT',
+      delete: 'DELETE'
+    };
+
+    self = this;
+    self.isCardInteractable = false;
+    self.canEdit = true;
+    self.canDelete = true;
+
+    self.on('mount', function () {
+      if (!self.opts.eventBus) {
+        console.warn('No event handler found');
+      }
+      self.isInteractable = self.opts.isInteractable ?
+        self.opts.isInteractable.toString().toLowerCase() === 'true' :
+        self.isInteractable;
+
+      self.canEdit = self.opts.canEdit ?
+        self.opts.canEdit.toString().toLowerCase() === 'true' :
+        self.canEdit;
+
+      self.canDelete = self.opts.canDelete ?
+        self.opts.canDelete.toString().toLowerCase() === 'true' :
+        self.canDelete;
+
+      self.opts.eventBus.on('fetch-values', self.onFetch);
+
+      self.update();
+    });
+
+    editCard(evt) {
+      trigger(evt, self.opts.eventBus, EVENTS.edit, {
+        'cardId': self.opts.cardId
+      });
+    }
+
+    deleteCard(evt) {
+      trigger(evt, self.opts.eventBus, EVENTS.delete, {
+        'cardId': self.opts.cardId
+      });
+    }
+
+    onClickCard(evt) {
+      if (!self.isInteractable || !self.canEdit) {
+        return;
+      }
+
+      var data;
+
+      data = {};
+
+      data[self.opts.dataKey] = [1, 2, 3, 4];
+
+      console.log(self.opts);
+
+      self.opts.onFetch(data);
+
+      trigger(evt, self.opts.eventBus, EVENTS.edit, {
+        'cardId': self.opts.cardId
+      });
+    }
+
+    function trigger(evt, bus, type, options) {
+      evt.stopImmediatePropagation();
+      bus.trigger(type, options);
+    }
+  </script>
+</card>

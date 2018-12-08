@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../assets/styles/uitk-core.css">
+  <title>Cards components</title>
+</head>
+
+<body>
+  <div class="site-content">
+    <div class="row">
+      <div class="col col-12">
+        <passports></passports>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/prototype/setup.js"></script>
+  <script src="assets/js/dependencies/uitk-required-libs.js"></script>
+  <script src="assets/js/dependencies/uitk-backbone.js"></script>
+  <script src="assets/js/prototype/protokit-handlebars.js"></script>
+  <script src="assets/js/dependencies/uitk-core.js"></script>
+  <script src="assets/js/prototype/translations.js"></script>
+  <script src="assets/js/dependencies/uitk-libs.js"></script>
+  <script src="assets/js/dependencies/uitk-core-app.js"></script>
+  <script src="assets/js/dependencies/riot.js"></script>
+  <script src="components/cards/passports.tag.html" type="riot/tag"></script>
+  <script src="components/cards/card.tag.html" type="riot/tag"></script>
+
+  <script>
+    var eventBus = riot.observable();
+    var model = [];
+
+    riot.mount('passports', {
+      eventBus: eventBus,
+      onFetch: function (values) {
+        model.push(values);
+
+        console.log(model);
+      },
+      onDelete: function (value) {
+        model.splice(value);
+      }
+    });
+  </script>
+</body>
+
+</html>

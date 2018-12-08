@@ -1,0 +1,38 @@
+<script>
+    // Ideally Agent Toolbar used <meta> tags and we could just do the same as Tealeaf (see tealeaf-tags.hbs).
+    // But it doesn't and implementing Agent Toolbar across all apps would require each team to add the 'agent-toolbar' partial to their layout.
+    // We can avoid that by dynamically adding the partial to the page.
+    (function (callback) {
+        // jQuery is not yet available here, have to use vanilla js instead of 'ready' event
+        document.readyState != 'complete' ? document.addEventListener('DOMContentLoaded', callback) : callback();
+    })(function () {
+        var tuid = "", rgtuid, arrangeeCount;
+
+        // DOM is now ready and js dependencies should be available
+        if (EG && EG.globalContext) {
+            arrangeeCount = EG.globalContext.arrangees.length;
+
+            if (arrangeeCount == 0) {
+                rgtuid = tuid = EG.user ? EG.user.userId : null;
+            }
+            else if (arrangeeCount == 1) {
+                rgtuid = tuid = EG.globalContext.arrangees.at(0).get('userId');
+            }
+            else if (arrangeeCount > 1) {
+                tuid = EG.user ? EG.user.userId : null;
+                rgtuid = EG.globalContext.arrangees.pluck('userId').join();
+            }
+
+            $('body').append(Handlebars.templates['partials/uitk/agent-toolbar']({ tuid: tuid, rgtuid: rgtuid }));
+
+            //This is a weird hack requested by ACE.  Apparently there is no reliable onload event using their framework for AgentToolbar but the title can be observed
+            var oldTitle = document.title;
+            document.title = document.title + '^' + window.location.hostname + '^' + tuid; // This will trigger AgentToolbar to reprocess this page for user data
+            document.title = oldTitle; // This will also trigger an AgentToolbar event handler, but since it does not contain any tuid data, it will not process anything
+        }
+
+        // Programmatically append the comment tag to the head tag after page load
+        // due to the comment tag in the head tag will push rest of code to the body tag
+        $('head').append('<comment id="PageId" title="{{pageTitle}}"></comment>');
+    });
+</script>

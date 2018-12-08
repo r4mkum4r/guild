@@ -1,0 +1,6 @@
+<div id="{{id}}" class="inline-tabs{{#if theme}} {{theme}}-theme{{else}} box-theme{{/if}}{{#if large}} tabs-large{{/if}}{{#if stretch}} tabs-stretch{{/if}}"
+     {{#if width}}style="width:{{width}}"{{/if}}
+     data-control="tabs" {{#if state}} data-tab-state="{{state}}"{{/if}}{{#if history}} data-history="{{history}}"{{/if}}>
+    <ul class="tabs">
+        {{> @partial-block}}
+    </ul>

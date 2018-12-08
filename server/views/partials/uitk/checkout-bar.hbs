@@ -1,0 +1,18 @@
+<div id="checkout-bar" data-control="checkout-bar">
+    <div class="site-content">
+        <div class="row">
+            <div class="col col-4">
+                <h5 class="checkout-bar-title sub-header">{{i18nMsg "uitk_total"}}</h5>
+                <h1 id="checkout-bar-total" data-amount="{{#if amount}}{{amount}}{{else}}0{{/if}}">{{#if amount}}{{i18nCurrency amount code=code}}{{else}}{{i18nCurrency 0 code=code}}{{/if}}</h1>
+            </div>
+            <div class="col col-8">
+                <button id="checkout-bar-confirm" class="btn btn-action btn-round btn-med success {{#if disabled}}disabled{{/if}}">
+                    <span class="btn-label">{{#if confirmLabel}}{{i18nMsg confirmLabel}}{{else}}{{i18nMsg "uitk_book"}}{{/if}}</span><i class="icon icon-arrow90"></i>
+                </button>
+                <button id="checkout-bar-save" class="btn btn-text-action btn-med">
+                    <span class="btn-label">{{#if saveLabel}}{{i18nMsg saveLabel}}{{else}}{{i18nMsg "uitk_save"}}{{/if}}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

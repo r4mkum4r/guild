@@ -1,0 +1,26 @@
+{
+    "aboutEgenciaId": {
+        "id": "about-egencia",
+        "label": "About Egencia"
+    },
+    "privacyPolicyId": {
+        "id": "privacy-policy",
+        "label": "Privacy Policy"
+    },
+    "promiseId": {
+        "id": "promise",
+        "label": "Egencia Promise"
+    },
+    "mobileId": {
+        "id": "mobile",
+        "label": "Explore our mobile app for iOS and Android"
+    },
+    "copyrightId": {
+        "id": "copyright",
+        "label": "&copy; 2014 Egencia, Inc. All rights reserved."
+    },
+    "termsOfUseId": {
+        "id": "terms-use",
+        "label": "Egencia LLC Terms of Use"
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Egencia | {{#if pageTitle}}{{pageTitle}}{{else}}Prototype{{/if}}
+    </title>
+    {{> partials/include/favicon}}
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/uitk-core.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    <script>window.EG = {} // Placeholder EG object</script>
+  </head>
+  <body>
+    {{> partials/uitk/header hf}}
+    {{{body}}}
+    {{> partials/uitk/footer hf}}
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/uitk-required-libs.js"></script>
+    <script src="/js/dependencies/uitk-backbone.js"></script>
+    <script src="/js/dependencies/uitk-handlebars.js"></script>
+    <script src="/js/dependencies/uitk-core.js"></script>
+    <script src="/js/dependencies/uitk-libs.js"></script>
+    <script src="/js/dependencies/uitk-core-app.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

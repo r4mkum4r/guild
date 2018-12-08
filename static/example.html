@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prototype Example</title>
+    <link rel="stylesheet" href="./assets/styles/uitk-core.css">
+    <style>
+        /* Add additional styles here */
+    </style>
+</head>
+
+<body>
+    <script id="prototype-template" type="text/x-handlebars-template">
+        <!-- Begin prototype -->
+        <div class="site-content">
+            <div class="row">
+                <div class="col col-12">
+                    <h1 id="page-title">{{pageTitle}}</h1>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    <div>
+                        <h3>User Information</h3>
+                        <p>The following is pulled from the
+                            <em>prototypeData</em> object:</p>
+                        <hr class="hr-small">
+                        <div>{{user.firstName}} {{user.lastName}}</div>
+                        <div>{{user.company}}</div>
+                        <div>{{user.type}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    {{> partials/uitk/alert-tag type="info" msgLabel="This is an alert"}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-6">
+                    <div class="box">
+                        <div class="box-padded">
+                            <h2>Select dates</h2>
+                            {{> partials/uitk/calendar dateRange=true startDateId="sample1" endDateId="sample2"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-6">
+                    <div class="box">
+                        <div class="box-padded">
+                            <h2>Search Flights</h2>
+                            {{> partials/uitk/autocomplete id="test-ess-flights" icon="flightsalt" placeholder="search" source="flights"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    {{startDate}} {{> partials/uitk/calendar id="sample3" endDateId="sample4" value=startDate}} {{> partials/uitk/calendar id="sample4"
+                    startDateId="sample3" value=endDate}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    {{startDate}} {{> partials/uitk/calendar id="sample3" endDateId="sample4" value=startDate}} {{> partials/uitk/calendar id="sample4"
+                    startDateId="sample3" value=endDate}}
+                </div>
+            </div>
+        </div>
+        <!-- End prototype -->
+    </script>
+
+    <!-- Compiled prototype container -->
+    <div id="prototype"></div>
+
+    <!-- Scripts only below -->
+    <script src="assets/js/prototype/setup.js"></script>
+    <script src="assets/js/dependencies/uitk-required-libs.js"></script>
+    <script src="assets/js/dependencies/uitk-backbone.js"></script>
+    <script src="assets/js/prototype/protokit-handlebars.js"></script>
+    <script src="assets/js/dependencies/uitk-core.js"></script>
+    <script src="assets/js/prototype/translations.js"></script>
+    <script src="assets/js/dependencies/uitk-libs.js"></script>
+    <script src="assets/js/dependencies/uitk-core-app.js"></script>
+    <script>
+        /* Add custom prototype data inside the prototypeData object */
+        var prototypeData = {
+            pageTitle: "Prototype Example",
+            description: "This is an example of a prototype. Edit the index.html file to get started on yours.",
+            user: {
+                firstName: "Jane",
+                lastName: "Smith",
+                company: "The Protokit Company",
+                type: "Traveler"
+            },
+            startDate: uitk.i18n.date(new Date()),
+            endDate: uitk.i18n.date(new Date())
+        };
+
+        console.log(uitk.i18n.date(new Date()))
+
+        /* Compile prototype template with Handlebars */
+        var template = document.getElementById('prototype-template').innerHTML;
+        var renderPrototype = Handlebars.compile(template);
+
+
+
+        document.getElementById('prototype').innerHTML = renderPrototype(prototypeData);
+    </script>
+</body>
+
+</html>

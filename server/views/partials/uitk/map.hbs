@@ -1,0 +1,49 @@
+{{#if fullscreen}}
+    <a href="javascript:void(0)" data-control="map" id="{{id}}"
+        {{#if classes}} class="{{classes}}" {{/if}}
+        {{#if mapDataId}} data-config-id="{{mapDataId}}" {{/if}}
+        {{#if center}} data-center="{{{center}}}" {{/if}}
+        {{#if title}} data-title="{{{title}}}" {{/if}}
+        {{#if subtitle}} data-subtitle="{{{subtitle}}}" {{/if}}
+        {{#if zoom}} data-zoom="{{{zoom}}}" {{/if}}
+        {{#if zoomToFitIsTrue}} data-zoom-to-fit="true" {{/if}}
+        {{#if fullscreen}} data-fullscreen="{{fullscreen}}" {{/if}}
+        {{#if mapType}} data-map-type="{{mapType}}" {{/if}}
+        {{#if legendIsTrue}} data-legend="true" {{/if}}
+        {{#if legendContent}} data-legend-content="{{{legendContent}}}" {{/if}}
+        {{{dataAttributes}}}>
+        {{{content}}}
+    </a>
+{{else}}
+    <figure data-control="map" id="{{id}}" class="map-inline {{classes}}"
+    {{#if mapDataId}} data-config-id="{{mapDataId}}" {{/if}}
+    {{#if coordinates}}
+        data-coordinates="
+            {{#each coordinates}}
+                {{#if @first}}{{{../this}}}{{/if}}
+                {{#if @last}},{{{../this}}}{{/if}}
+            {{/each}}"
+        data-center="
+            {{#each coordinates}}
+                {{#if @first}}{{{../this}}}{{/if}}
+                {{#if @last}},{{{../this}}}{{/if}}
+            {{/each}}"
+    {{/if}}
+    {{#if center}}
+        data-center="
+            {{#each center}}
+                {{#if @first}}{{{../this}}}{{/if}}
+                {{#if @last}},{{{../this}}}{{/if}}
+            {{/each}}"
+    {{/if}}
+    {{#if title}} data-title="{{{title}}}" {{/if}}
+    {{#if zoom}} data-zoom="{{{zoom}}}" {{/if}}
+    {{#if zoomToFitIsTrue}} data-zoom-to-fit="true" {{/if}}
+    {{#if mapType}} data-map-type="{{mapType}}" {{/if}}
+    {{{dataAttributes}}}>
+    {{#if title}}
+        <figcaption class="map-heading">{{{title}}}</figcaption>
+    {{/if}}
+    {{{content}}}
+    </figure>
+{{/if}}

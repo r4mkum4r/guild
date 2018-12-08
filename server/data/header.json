@@ -1,0 +1,297 @@
+{
+  "header": {
+    "title": null,
+    "lastname": "Prototype",
+    "firstname": "Test",
+    "companyName": "Prototype Company, Inc.",
+    "pos": "EN",
+    "userLocale": "en-en",
+    "profiles": [{
+        "name": "Profile 1",
+        "url": null,
+        "label": "Switch User",
+        "productId": null
+    },
+    {
+        "name": "Profile 2",
+        "url": null,
+        "label": "Switch User",
+        "productId": null
+    },
+    {
+        "name": "Profile 3",
+        "url": null,
+        "label": "Switch User",
+        "productId": null
+    }],
+    "linkedAccounts": {
+        "label": "Manage linked accounts",
+        "url": null
+    },
+    "availableLanguages": [{
+        "locale": "zh_CN",
+        "language": "Chinese"
+    }, {
+        "locale": "en_CN",
+        "language": "English",
+        "selected": true
+    }],
+    "menus": {
+        "tripMenuId": {
+            "id": "trip-menu",
+            "label": "Trips",
+            "url": "/app?page=DossiersListPage&service=page",
+            "items": {
+                "myTripsId": {
+                    "id": "my-trips",
+                    "label": "My Trips",
+                    "url": "/app?page=DossiersListPage&service=page"
+                }
+            }
+        },
+        "toolMenuId": {
+            "id": "tool-menu",
+            "label": "Tools",
+            "items": {
+                "reportingMenuId": {
+                    "id": "reporting-menu",
+                    "label": "Reporting",
+                    "items": {
+                        "reportingId": {
+                            "id": "reporting",
+                            "label": "Reports",
+                            "url": "/app?page=GlobalReporting&service=page"
+                        },
+                        "travTrackingId": {
+                            "id": "trav-tracking",
+                            "label": "Traveller Tracking",
+                            "url": "/site/travelmanagement/reporting/travellertrackingpage"
+                        }
+                    }
+                },
+                "travMgmtMenuId": {
+                    "id": "trav-mgmt-menu",
+                    "label": "Travel Management",
+                    "items": {
+                        "awaitingApprovalTripsId": {
+                            "id": "awaiting-approval-trips",
+                            "label": "Trips waiting for approval",
+                            "url": "/app?page=ApproListPage&service=external&sp=Srequested"
+                        },
+                        "refusedTripsId": {
+                            "id": "refused-trips",
+                            "label": "Trips refused",
+                            "url": "/app?page=ApproListPage&service=external&sp=Srefuses"
+                        }
+                    }
+                },
+                "userMgmtMenuId": {
+                    "id": "user-mgmt-menu",
+                    "label": "User Management",
+                    "items": {
+                        "userCreationId": {
+                            "id": "user-creation",
+                            "label": "Create User",
+                            "url": "/app?page=CreateUser&service=external"
+                        },
+                        "userSearchId": {
+                            "id": "user-search",
+                            "label": "User Management",
+                            "url": "/app?page=SearchUser&service=external"
+                        }
+                    }
+                },
+                "compMgmtMenuId": {
+                    "id": "comp-mgmt-menu",
+                    "label": "Company Management",
+                    "items": {
+                        "CommunicationId": {
+                            "id": "communication",
+                            "label": "Communication",
+                            "url": "/app?page=ProductCommunicationPage&service=page"
+                        },
+                        "CustomizationId": {
+                            "id": "customization",
+                            "label": "Company Management",
+                            "url": "/app?page=Customisation&service=page"
+                        },
+                        "companyAddressId": {
+                            "id": "company-address",
+                            "label": "Company address list",
+                            "url": "/app?page=CompanyAddress&service=page"
+                        },
+                        "GeographicMsgId": {
+                            "id": "geographic-msg",
+                            "label": "Geographic messages",
+                            "url": "/mvc/companyManagement/springControllers/geographicMessages"
+                        },
+                        "costCenterId": {
+                            "id": "cost-center",
+                            "label": "Cost Centre(s)",
+                            "url": "/app?page=CostCenters&service=page"
+                        }
+                    }
+                },
+                "generalMenuId": {
+                    "id": "general-menu",
+                    "label": "General",
+                    "items": {
+                        "onlineCheckInId": {
+                            "id": "online-checkIn",
+                            "label": "Online Check-in",
+                            "url": "/app?service=page&page=OnlineCheckIn"
+                        },
+                        "travelNewsId": {
+                            "id": "travel-news",
+                            "label": "Travel news",
+                            "url": "/site/travellertool/latesttravelnewspage"
+                        },
+                        "mapsDirectionsId": {
+                            "id": "maps-directions",
+                            "label": "Maps and directions",
+                            "url": "/app?page=MapsAndDirectionsPage&service=page"
+                        },
+                        "visaPassportId": {
+                            "id": "visa-passport",
+                            "label": "Visas",
+                            "url": "/app?page=Visas&service=page"
+                        },
+                        "countryWatchId": {
+                            "id": "country-watch",
+                            "label": "Country watch",
+                            "url": "app?page=CountryWatch&service=page"
+                        },
+                        "currencyConverterId": {
+                            "id": "currency-converter",
+                            "label": "Currency conversion",
+                            "url": "/app?page=Currency&service=page"
+                        }
+                    }
+                },
+                "travPolicyMenuId": {
+                    "id": "trav-policy-menu",
+                    "label": "Travel Policy",
+                    "items": {
+                        "preferredHotelId": {
+                            "id": "preferred-hotel",
+                            "label": "Preferred hotels",
+                            "url": "/site/travelmanagement/travelpolicy/preferredhotels"
+                        },
+                        "customLocationId": {
+                            "id": "custom-location",
+                            "label": "Custom location",
+                            "url": "/mvc/travelmanagement/travelpolicy/customLocations"
+                        },
+                        "customReasonId": {
+                            "id": "custom-reason",
+                            "label": "Custom Reason codes",
+                            "url": "/mvc/travelmanagement/travelpolicy/customReasonsCodes"
+                        },
+                        "hotelPreferencesId": {
+                            "id": "hotel-preferences",
+                            "label": "Display preferences",
+                            "url": "/site/travelmanagement/travelpolicy/HotelDisplayPreferencePage"
+                        },
+                        "supplierPolicyId": {
+                            "id": "supplier-policy",
+                            "label": "Supplier Policy",
+                            "url": "/app?page=SupplierPolicy&service=page"
+                        },
+                        "flightDisplayId": {
+                            "id": "flight-display",
+                            "label": "Flight results display",
+                            "url": "/app?page=InfluenceOnDisplay&service=page"
+                        }
+                    }
+                }
+            }
+        },
+        "bookMenuId": {
+            "id": "book-menu",
+            "label": "Book",
+            "url": "/app?continuationClass=com.egencia.frontend.air.workflow.AirShoppingContinuation&service=ContinuationService&sp=SWelcome",
+            "items": {
+                "bookFlightId": {
+                    "id": "book-flight",
+                    "label": "Flights",
+                    "url": "/app?continuationClass=com.egencia.frontend.air.workflow.AirShoppingContinuation&service=ContinuationService"
+                },
+                "bookNewCarId": {
+                    "id": "book-car",
+                    "label": "Cars",
+                    "url": "mvc/car/shop?execution=e1s1"
+                },
+                "bookHotelId": {
+                    "id": "book-hotel",
+                    "label": "Hotels",
+                    "url": "/site/travel/hotel/hotelsearchpage"
+                },
+                "bookTrainId": {
+                    "id": "book-train",
+                    "label": "Trains",
+                    "url": "/NewJourney.f?subAction=train"
+                }
+            }
+        },
+        "adminMenuId": {
+            "id": "admin-menu",
+            "label": "Admin",
+            "items": {
+                "incidentGuidelinesId": {
+                    "id": "incident-guidelines",
+                    "label": "Incident Guidelines",
+                    "url": "/app?page=HelpPopup&service=external&sp=Sother&sp=1&sp=S125.jsp"
+                },
+                "newIncidentId": {
+                    "id": "new-incident",
+                    "label": "Declare an incident",
+                    "url": "/app?component=%24BaseTemplate.%24HelpComponent.%24CustomerCareComponent.%24DirectLink_0&page=Welcome&service=direct&session=T"
+                },
+                "billbackAirLccId": {
+                    "id": "billback",
+                    "label": "Billback ",
+                    "url": "/mvc/billback/airlcc/index"
+                }
+            }
+        }
+    },
+    "footer": {
+        "aboutEgenciaId": {
+            "id": "about-egencia",
+            "label": "About Egencia"
+        },
+        "privacyPolicyId": {
+            "id": "privacy-policy",
+            "label": "Privacy Policy"
+        },
+        "promiseId": {
+            "id": "promise",
+            "label": "Egencia Promise"
+        },
+        "mobileId": {
+            "id": "mobile",
+            "label": "Explore our mobile app for iOS and Android"
+        },
+        "copyrightId": {
+            "id": "copyright",
+            "label": "&copy; 2014 Egencia, Inc. All rights reserved."
+        },
+        "termsOfUseId": {
+            "id": "terms-use",
+            "label": "Egencia LLC Terms of Use"
+        }
+    },
+    "profile": {
+        "id": "user-profile",
+        "label": "Profile",
+        "url": "/app?page=MyProfile&service=page"
+    },
+    "home": {
+        "id": "logo",
+        "url": "/app?continuationClass=com.egencia.frontend.air.workflow.AirShoppingContinuation&service=ContinuationService&sp=SWelcome"
+    },
+    "logout": {
+        "label": "Logout"
+    }
+}
+}

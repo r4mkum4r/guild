@@ -1,0 +1,70 @@
+{{#if dateRange}}
+    {{#if startDateId}}
+        {{#if endDateId}}
+            <div class="date-range {{classes}}">
+                <div class="input-group {{classes}} input-icon-left">
+                    <input id="{{startDateId}}" type="text" class="cal-text-input {{inputClasses}}" size="12" name="{{name}}_start" placeholder="{{i18nMsg "uitk_calendar_placeholder_date"}}"
+                        value="{{i18nDate startDateValue style="short"}}"
+                        data-iso-date="{{i18nDate startDateValue style="iso"}}"
+                        data-control="calendar"
+                        data-first-valid-date="{{firstValidDate}}"
+                        data-last-valid-date="{{lastValidDate}}"
+                        data-date-range="true"
+                        data-end-date="#{{endDateId}}"
+                        data-default-booking-length="{{#if bookingLength}}{{bookingLength}}{{else}}2{{/if}}"
+                        data-max-booking-length="{{#if maxBookingLength}}{{maxBookingLength}}{{else}}60{{/if}}"
+                        data-min-booking-length="{{#if minBookingLength}}{{minBookingLength}}{{else}}1{{/if}}"
+                        data-annual="{{annual}}"
+                        data-time-picker-id="{{timePickerId}}"
+                        data-tooltip-id="{{#if tooltipId}}{{tooltipId}}{{else}}calendartooltip{{/if}}"
+                        {{#if smallScreen}} readonly{{/if}}/>
+                    <i class="icon icon-calendar"></i>
+                </div>
+                <div class="input-group {{classes}} input-icon-left">
+                    <input id="{{endDateId}}" type="text" class="cal-text-input {{inputClasses}}" size="12" name="{{name}}_end" placeholder="{{i18nMsg "uitk_calendar_placeholder_date"}}"
+                        value="{{i18nDate endDateValue style="short"}}"
+                        data-iso-date="{{i18nDate endDateValue style="iso"}}"
+                        data-control="calendar"
+                        data-first-valid-date="{{firstValidDate}}"
+                        data-last-valid-date="{{lastValidDate}}"
+                        data-date-range="true"
+                        data-start-date="#{{startDateId}}"
+                        data-default-booking-length="{{#if bookingLength}}{{bookingLength}}{{else}}2{{/if}}"
+                        data-max-booking-length="{{#if maxBookingLength}}{{maxBookingLength}}{{else}}60{{/if}}"
+                        data-min-booking-length="{{#if minBookingLength}}{{minBookingLength}}{{else}}1{{/if}}"
+                        data-annual="{{annual}}"
+                        data-time-picker-id="{{timePickerId}}"
+                        data-tooltip-id="{{#if tooltipId}}{{tooltipId}}{{else}}calendartooltip{{/if}}"
+                        {{#if smallSreen}} readonly{{/if}}/>
+                    <i class="icon icon-calendar"></i>
+                </div>
+                <div class="input-message">{{{inputMsg}}}</div>
+            </div>
+        {{/if}}
+    {{/if}}
+{{else}}
+    {{#if inline}}
+        <div  class="cal-inline">
+            <div id="{{id}}" data-control="calendar" data-inline="true" {{#if value}}data-value="{{i18nDate value style="short"}}"{{/if}}></div>
+        </div>
+    {{else}}
+        <div class="input-group {{classes}} input-icon-left">
+            <input id="{{id}}" type="text" class="cal-text-input {{#if invalid}}invalid{{/if}} {{inputClasses}}" name="{{name}}" placeholder="{{i18nMsg "uitk_calendar_placeholder_date"}}"
+                value="{{i18nDate value style="short"}}"
+                data-iso-date="{{i18nDate value style="iso"}}"
+                data-control="calendar"
+                data-first-valid-date="{{#if firstValidDate}}{{firstValidDate}}{{/if}}"
+                data-last-valid-date="{{#if lastValidDate}}{{lastValidDate}}{{/if}}"
+                {{#if endDateId}}data-end-date="#{{endDateId}}"{{/if}}
+                {{#if startDateId}}data-start-date="#{{startDateId}}"{{/if}}
+                data-default-booking-length="{{#if bookingLength}}{{bookingLength}}{{else}}2{{/if}}"
+                data-max-booking-length="{{#if maxBookingLength}}{{maxBookingLength}}{{else}}60{{/if}}"
+                data-min-booking-length="{{#if minBookingLength}}{{minBookingLength}}{{else}}1{{/if}}"
+                data-tooltip-id="{{#if tooltipId}}{{tooltipId}}{{else}}calendartooltip{{/if}}"
+                data-annual="{{annual}}"
+                {{#if disabled}}disabled{{/if}}/>
+            <i class="icon icon-calendar"></i>
+            <div class="input-message">{{{inputMsg}}}</div>
+        </div>
+    {{/if}}
+{{/if}}

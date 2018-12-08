@@ -1,0 +1,6 @@
+<li>
+  <label{{#if id}} id="{{id}}"{{/if}} class="check{{classes}}">
+    <input type="checkbox" name="{{name}}" value="{{value}}"{{{dataAttributes}}}{{#if selectedIsTrue}} checked{{/if}}/>
+    <span class="inline-label tab{{#if last}} last{{/if}}">{{{content}}}</span>
+  </label>
+</li>

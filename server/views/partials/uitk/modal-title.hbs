@@ -1,0 +1,7 @@
+<header class="modal-header">
+    {{#if titleIcon}}<i class="icon icon-{{titleIcon}} modal-title-icon"></i>{{/if}}
+    <h4 class="modal-title" id="{{id}}-title">{{title}}{{#if panel}}<i class="modal-close icon icon-close"></i>{{/if}}</h4>
+    {{#if subtitle }}
+        <p class="modal-subtitle" id="{{id}}-subtitle">{{subtitle}}</p>
+    {{/if}}
+</header>

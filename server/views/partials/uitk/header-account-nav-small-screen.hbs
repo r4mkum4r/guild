@@ -1,0 +1,41 @@
+<a id="account-nav-mobile-toggle" href="#" class="account-nav-toggle">
+    <i class="icon icon-traveleralt"></i>
+</a>
+
+<div id="account-nav-mobile" class="account-nav">
+    <div class="user-control-bar cf">
+        <div class="user-menu-username left secondary">
+            <h2 class="user-name">
+                {{title}} {{firstname}} {{lastname}}
+                <span>({{pos}})</span>
+            </h2>
+            <div class="company-name">{{companyName}}</div>
+        </div>
+        <div class="secondary right">
+            <a id="{{profile.id}}" href="{{profile.url}}">{{profile.label}}</a>
+        </div>
+    </div>
+    {{#if profiles}}
+        <ul id="user-menu-profiles">
+            {{#each profiles}}
+                <li class="user-menu-profile user-layout"><span>{{name}}</span><a id="{{productId}}" href="{{url}}">{{label}}</a></li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    <div class="cf">
+        {{#if availableLanguages}}
+            <div class="input-group left select">
+                <select id="locale-chooser" name="egencia_locale">
+                    {{#each availableLanguages}}
+                        <option value="{{this.locale}}" {{#if this.selected}}selected{{/if}}>{{this.language}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        {{/if}}
+        {{#with logout}}
+            <a id="{{id}}" href="{{url}}" class="btn btn-no-margin">
+                <span class="btn-label">{{label}}</span>
+            </a>
+        {{/with}}
+    </div>
+</div>

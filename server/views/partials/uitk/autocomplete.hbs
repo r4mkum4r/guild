@@ -1,0 +1,53 @@
+<div class="input-group autocomplete autocomplete-wrap cf {{classes}} {{#if icon}}input-icon-left{{/if}}">
+    {{#if label}}
+        <label>{{i18nMsg label}}</label>
+    {{/if}}
+    {{#if tags}}
+        <div class="input autocomplete-tags-wrap">
+            {{#each tags}}
+                {{include "partials/uitk/tag" id=id type=category value=value label=value autocomplete=true}}
+            {{/each}}
+    {{/if}}
+    <input
+        id="{{id}}"
+        name="{{name}}"
+        type="text"
+        class="text autocomplete-input {{#if invalid}}invalid{{/if}} {{inputClasses}}"
+        placeholder="{{{i18nMsg placeholder}}}"
+        value="{{value}}"
+        {{#if disabled}}disabled{{/if}}
+        data-control="typeahead"
+        {{#if tags}}data-tags="{{tags}}"{{/if}}
+        {{#if noResultsTitle}}data-no-results-title="{{noResultsTitle}}"{{/if}}
+        {{#if noResultsBody}}data-no-results-body="{{noResultsBody}}"{{/if}}
+        {{#if taglimit}}data-taglimit="{{taglimit}}"{{/if}}
+        data-selected-item-id="{{selectedItemId}}"
+        {{#if id}}data-autocomplete-id="{{id}}"{{/if}}
+        {{#if url}}data-url="{{url}}"{{/if}}
+        {{#if source}}data-source="{{source}}"{{/if}}
+        {{#if validate}}data-validate="{{validate}}"{{/if}}
+        {{#if min}}data-minchar="{{min}}"{{/if}}
+        {{#if items}}data-maxitems="{{items}}"{{/if}}
+        {{#if abtest}}data-abtest="{{abtest}}"{{/if}}
+        {{#if regiontype}}data-regiontype="{{regiontype}}"{{/if}}
+        {{#if cdd}}data-cdd="{{cdd}}"{{/if}}
+        {{#if locale}}data-locale="{{locale}}"{{/if}}
+        {{#if clientId}}data-client-id="{{clientId}}"{{/if}}
+        {{#if features}}data-features="{{features}}"{{/if}}
+        {{#if sortcriteria}}data-sortcriteria="{{sortcriteria}}"{{/if}}
+        {{#if useDefaultResults}}data-use-default-results="{{useDefaultResults}}"{{/if}}
+        {{#if userId}}data-user-id="{{userId}}"{{/if}}
+        {{#if companyId}}data-company-id="{{companyId}}"{{/if}}
+        {{#if essQueryParams}}data-ess-query-params="{{essQueryParams}}"{{/if}}
+        data-highlight-first="{{highlightFirst}}"
+        data-template="partials/uitk/autocomplete-results{{#if categorized}}-by-category{{/if}}"
+        data-js-theme="typeahead"
+        data-tooltip-id="typeaheadDataPlain"
+        {{#if autofocus}}data-autofocus{{/if}}
+        data-autoselect="touch" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+    {{#if icon}}<i class="icon icon-{{icon}}"></i>{{/if}}
+    {{#if tags}}
+        </div>
+    {{/if}}
+    <div class="input-message">{{{inputMsg}}}</div>
+</div>

@@ -1,0 +1,63 @@
+<div id="{{id}}" class="media-viewer-wrapper">
+    <div class="media-viewer-wrap">
+        <button class="media-viewer-open"><i class="icon icon-noimagealt"></i> {{slides.length}}</button>
+        <section class="media-viewer resize-shrink{{classes}}" data-control="media-viewer" data-slider-id="{{id}}" aria-live="polite" {{{dataAttributes}}}>
+            <button class="media-viewer-close hidden btn-no-margin"><i class="icon icon-close"></i></button>
+            <button class="image-slider-control prev">
+                <span class="icon icon-toggle270" aria-hidden="true"></span>
+                <span class="visuallyhidden">Previous image</span>
+            </button>
+            <button class="image-slider-control next">
+                <span class="visuallyhidden">Next image</span>
+                <span class="icon icon-toggle90" aria-hidden="true"></span>
+            </button>
+            <div class="media-collection"></div>
+            <span class="media-loader animated">{{> partials/uitk/loader-tag loaderTag}}</span>
+        </section>
+        <section class="image-slider hidden" data-control="image-slider" data-slider-id="{{id}}" aria-controls="media-viewer">
+            <div class="image-slider-mask">
+                <ul class="image-slider-thumbs">
+                    {{#if outputTemplate}}
+                        {{{preTemplateContent}}}
+                        {{#with templateContent}}
+                            <li>
+                                {{{ifHelper}}}
+                                <a data-image="{{isImage}}" href="http://www.youtube.com/embed/{{{mediaId}}}?enablejsapi=1{{#if}}{{videoParameters}}{{/if}}" data-video-parameters="{{videoParameters}}" data-media-type="{{mediaType}}" data-media-id="{{mediaId}}" class="video {{classes}}"{{{dataAttributes}}}>
+                                    <img src="{{thumb}}" alt="{{{alt}}}"/>
+                                    <span class="icon icon-play"></span>
+                                </a>
+                                {{{ifHelperElse}}}
+                                <a data-image="{{isImage}}" href="{{main}}"{{#if classes}} class="{{classes}}"{{/if}} data-media-type="image"{{{dataAttributes}}}{{#if srcSet}} data-srcset="{{srcSet}}"{{/if}}{{#if caption}} data-caption="{{{caption}}}"{{/if}}>
+                                    <img src="{{thumb}}" alt="{{{alt}}}"/>
+                                </a>
+                                {{{ifHelperIf}}}
+                            </li>
+                        {{/with}}
+                        {{{postTemplateContent}}}
+                    {{else}}
+                        {{#each slides}}
+                            <li>
+                                {{#if isVideo}}
+                                    <a href="http://www.youtube.com/embed/{{{mediaId}}}?enablejsapi=1{{#if}}{{videoParameters}}{{/if}}" data-video-parameters="{{videoParameters}}" data-media-type="{{mediaType}}" data-media-id="{{mediaId}}" class="video {{classes}}"{{{dataAttributes}}}>
+                                        <img src="{{thumb}}" alt="{{{alt}}}"/>
+                                        <span class="icon icon-play"></span>
+                                    </a>
+                                {{else}}
+                                    <a href="{{main}}" data-media-type="image"
+                                        {{#if classes}} class="{{classes}}"{{/if}}
+                                        {{#if path}} data-path="{{path}}"{{/if}}
+                                        {{#if srcSet}} data-srcset="{{srcSet}}"{{/if}}
+                                        {{#if downgradeIsTrue}} data-downgrade="true"{{/if}}
+                                        {{#if caption}} data-caption="{{{caption}}}"{{/if}}
+                                        {{{dataAttributes}}}
+                                        data-thumb-src="{{thumb}}"
+                                        data-thumb-alt="{{alt}}"></a>
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    {{/if}}
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

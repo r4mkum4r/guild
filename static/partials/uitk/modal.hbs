@@ -1,0 +1,35 @@
+{{#if linkContent}}
+    <a data-control="modal"
+        {{#if href}} href="{{href}}"{{else}} href="#"{{/if}}
+        {{#if ajaxUrl}} href="{{ajaxUrl}}" data-ajax="true" {{/if}}
+        {{#if id}} id="{{id}}" {{/if}}
+        {{#if linkClasses}} class="{{linkClasses}}" {{/if}}
+        {{#if id}} data-modal-id="{{id}}" {{/if}}
+        {{#unless defaultTheme}} data-js-theme="{{theme}}" {{/unless}}
+        {{#if dismissIsFalse}} data-dismiss="false" {{/if}}
+        {{#if backgroundIsFalse}} data-background="false" {{/if}}
+        {{#if alert}} data-alert="{{alert}}" {{/if}}
+        {{#if alertTitle}} data-alert-title="{{alertTitle}}" {{/if}}
+        {{#if alertIcon}} data-alert-icon="{{alertIcon}}"{{/if}}
+        {{#if title}} data-title="{{title}}" {{/if}}
+        {{#if subtitle}} data-subtitle="{{subtitle}}" {{/if}}
+        {{#if titleIcon}} data-title-icon="{{titleIcon}}"{{/if}}
+        {{#if footer}} data-footer="true" {{/if}}
+        {{#if panel}} data-panel="true" {{/if}}
+        {{#if panelSize}} data-panel-size="{{panelSize}}"{{/if}}
+        {{#if confirm}} data-confirm="true" {{/if}}
+        {{#if confirmText}} data-confirm-text="{{confirmText}}"{{/if}}
+        {{#if cancelText}} data-cancel-text="{{cancelText}}"{{/if}}
+        {{#if optOut}} data-opt-out="true" {{/if}}
+        {{#if optOutText}} data-opt-out-text="{{optOutText}}"{{/if}}
+        {{#if manual}} data-manual="{{manual}}"{{/if}}
+        {{#if state}} data-state="{{state}}"{{/if}}
+        {{{dataAttributes}}}>
+        {{{linkContent}}}
+    </a>
+{{/if}}
+{{#if id}}
+    <div id="modal-content-{{id}}" class="visuallyhidden {{classes}}" aria-hidden="true">
+        <div class="modal-content">{{> @partial-block}}</div>
+    </div>
+{{/if}}

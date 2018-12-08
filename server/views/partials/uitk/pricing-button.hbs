@@ -1,0 +1,12 @@
+<div class="btn-wrapper">
+    <{{#if href}}a{{else}}button{{/if}} id="{{id}}" {{#if href}}href="{{href}}"{{/if}} class="btn btn-no-margin btn-price {{classes}} {{#if oop}}out-of-policy{{/if}} {{#if corporateFare}}corporate-fare{{/if}} {{#if disabled}}disabled{{/if}}">
+        <span class="btn-label">
+            {{#if oop}}<i class="icon icon-flagalt small"></i> {{/if}}
+            {{#if label}}{{{i18nMsg label}}} {{else}} {{{i18nCurrency amount locale=locale code=code round=round}}}{{/if}}
+            {{#if sup}}<sup>{{{sup}}}</sup>{{/if}}
+        </span>
+    </{{#if href}}a{{else}}button{{/if}}>
+    {{#if msg}}
+        <div class="btn-message">{{{i18nMsg msg}}}</div>
+    {{/if}}
+</div>

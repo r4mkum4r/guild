@@ -1,0 +1,143 @@
+<a id="primary-nav-toggle"><span>Menu</span></a>
+<nav id="primary-nav-mobile" class="primary-nav">
+    <div class="nav-wrapper">
+        {{#with menus.bookMenuId}}
+            <!-- Book -->
+            <h4 class="category-title">{{label}}</h4>
+            <ul id="{{id}}" class="submenu submenu-primary list">
+                {{#each items}}
+                    <li><a id="{{this.id}}" href="{{this.url}}" class="medium">{{this.label}}</a></li>
+                {{/each}}
+            </ul>
+            <!-- Manage -->
+            <h4 class="category-title">Manage</h4>
+            <ul class="submenu submenu-primary list">
+                {{#with menus.tripMenuId}}
+                    <li class="menu-item">
+                        <a id="primary-nav-trips" id="{{id}}" href="{{url}}">{{label}}</a>
+                    </li>
+                {{/with}}
+                {{#if menus.expense}}
+                    <li class="menu-item">
+                        <a id="primary-nav-expense" href="/expense">{{i18nMsg "Expense"}}</a>
+                    </li>
+                {{/if}}
+                {{#with menus.toolMenuId}}
+                    <li class="menu-item">
+                        <a id="primary-nav-tools" data-menu-id="tool-menu" class="has-submenu icon icon-toggle90">{{label}}</a>
+                    </li>
+                {{/with}}
+                <li class="menu-item">
+                    <a id="primary-nav-feedback" href="#">{{i18nMsg "uitk_feedback"}}</a>
+                </li>
+                {{#if menus.adminMenuId}}
+                    {{#with menus.adminMenuId}}
+                        <li class="menu-item">
+                            <a id="primary-nav-admin" data-menu-id="admin-menu" class="has-submenu icon icon-toggle90 agent-only">{{label}}</a>
+                        </li>
+                    {{/with}}
+                {{/if}}
+            </ul>
+        {{/with}}
+    </div>
+    <div class="nav-panel-close">
+        <div class="icon icon-arrow270"></div>
+    </div>
+
+    <!-- Submenu Panels -->
+    <div class="nav-panel">
+        {{#with menus.toolMenuId}}
+            <div id="{{id}}" class="panel-menu-wrapper">
+                <h4 class="category-title">{{label}}</h4>
+                <ul class="submenu submenu-secondary multi-list">
+                    {{#with items}}
+                        {{#if generalMenuId.items}}
+                            <li>
+                                <a href="#menu-general" data-control="toggle" class="toggle icon icon-caret180">{{generalMenuId.label}}</a>
+                                <ul id="menu-general" class="toggle-pane">
+                                    {{#each generalMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if expenseMenuId.items}}
+                            <li>
+                                <a href="#menu-expense" data-control="toggle" class="toggle icon icon-caret180">{{expenseMenuId.label}}</a>
+                                <ul id="menu-expense" class="toggle-pane">
+                                    {{#each expenseMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if travMgmtMenuId.items}}
+                            <li>
+                                <a href="#menu-travel-mgmt" data-control="toggle" class="toggle icon icon-caret180">{{travMgmtMenuId.label}}</a>
+                                <ul id="menu-travel-mgmt" class="toggle-pane">
+                                    {{#each travMgmtMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if travPolicyMenuId.items}}
+                            <li>
+                                <a href="#menu-travel-policy" data-control="toggle" class="toggle icon icon-caret180">{{travPolicyMenuId.label}}</a>
+                                <ul id="menu-travel-policy" class="toggle-pane">
+                                    {{#each travPolicyMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if userMgmtMenuId.items}}
+                            <li>
+                                <a href="#menu-user-mgmt" data-control="toggle" class="toggle icon icon-caret180">{{userMgmtMenuId.label}}</a>
+                                <ul id="menu-user-mgmt" class="toggle-pane">
+                                    {{#each userMgmtMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if compMgmtMenuId.items}}
+                            <li>
+                                <a href="#menu-comp-mgmt" data-control="toggle" class="toggle icon icon-caret180">{{compMgmtMenuId.label}}</a>
+                                <ul id="menu-comp-mgmt" class="toggle-pane">
+                                    {{#each compMgmtMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                        {{#if reportingMenuId.items}}
+                            <li>
+                                <a href="#menu-reporting" data-control="toggle" class="toggle icon icon-caret180">{{reportingMenuId.label}}</a>
+                                <ul id="menu-reporting" class="toggle-pane">
+                                    {{#each reportingMenuId.items}}
+                                        <li><a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/if}}
+                    {{/with}}
+                </ul>
+            </div>
+        {{/with}}
+        {{#if menus.adminMenuId}}
+            {{#with menus.adminMenuId}}
+                <div id="{{id}}" class="panel-menu-wrapper">
+                    <h4 id="primary-nav-admin" class="category-title agent-only">{{label}}</h4>
+                    <ul class="submenu submenu-secondary list">
+                        {{#each items}}
+                            <li>
+                                <a id="{{this.id}}" href="{{this.url}}" {{#if this.opensNewWindow}}target=“_blank”{{/if}}>{{this.label}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            {{/with}}
+        {{/if}}
+    </div>
+</nav>

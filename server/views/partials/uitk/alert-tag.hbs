@@ -1,0 +1,12 @@
+<div {{#if id}}id="{{id}}"{{/if}} class="alert alert-{{#if type}}{{type}}{{else}}info{{/if}} {{#if bgColorAlt}}gray{{/if}} {{cssClasses}} {{classes}}" data-control="alert"{{#if dismiss}} data-dismiss={{dismiss}}{{/if}}>
+    {{#if icon}}<i class="icon icon-{{icon}}"></i>{{else}}<i class="icon icon-{{type}}alt"></i>{{/if}}
+    <div class="alert-message">
+        {{#if titleLabel}}<h6 class="alert-title sub-header">{{i18nMsg titleLabel}}</h6>{{/if}}
+        <p>{{i18nMsg msgLabel}}</p>
+    </div>
+    {{#unless preventClose}}
+        <button class="btn-close alert-remove" type="button">
+            <span class="icon icon-close" aria-hidden="true"></span>
+        </button>
+    {{/unless}}
+</div>

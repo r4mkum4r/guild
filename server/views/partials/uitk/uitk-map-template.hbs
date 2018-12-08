@@ -1,0 +1,15 @@
+<div id="{{id}}" class="map-overlay{{#if legend}} legend{{/if}}{{#if subtitle}} subtitle{{/if}}" role="dialog"{{#if title}} aria-labelledby="{{id}}-title"{{/if}}>
+  <header class="map-header" id="{{id}}-header">
+    {{#with closeButton}}
+      {{> partials/uitk/button-tag}}
+    {{/with}}
+    {{#if title}}<h2 class="h2 map-heading" id="{{id}}-title">{{{title}}}</h2>{{/if}}
+    {{#if subtitle}}<p class="subtitle">{{{subtitle}}}</p>{{/if}}
+  </header>
+  {{#if legend}}
+    <div id="legend" class="legend">
+      {{{legendcontent}}}
+    </div>
+  {{/if}}
+  <div id="{{canvasid}}" class="map-canvas"></div>
+</div>

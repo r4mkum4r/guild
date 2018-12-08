@@ -1,0 +1,35 @@
+<fieldset class="star-ratings-filter">
+	<legend{{#if legendHidden}} class="visuallyhidden"{{/if}}>{{i18nMsg "uitk_rating_stars_legend"}}</legend>
+
+	<div class="star-input-wrapper">
+		{{! it would be nice to have the ability to iterate over a value instead of repeating code}}
+		<input type="radio" class="star-rating unradio visuallyhidden" id="{{#if id}}{{id}}{{else}}star{{/if}}-5" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="5" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-5" class="star-label unlabel">
+			<span class="visuallyhidden">5 {{i18nMsg "uitk_rating_stars_text"}}</span>
+		</label>
+
+		<input type="radio" class="star-rating unradio visuallyhidden" id="{{#if id}}{{id}}{{else}}star{{/if}}-4" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="4" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-4" class="star-label unlabel">
+			<span class="visuallyhidden">4 {{i18nMsg "uitk_rating_stars_text"}}</span>
+		</label>
+
+		<input type="radio" class="star-rating unradio visuallyhidden" id="{{#if id}}{{id}}{{else}}star{{/if}}-3" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="3" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-3" class="star-label unlabel">
+			<span class="visuallyhidden">3 {{i18nMsg "uitk_rating_stars_text"}}</span>
+		</label>
+
+		<input type="radio" class="star-rating unradio visuallyhidden" id="{{#if id}}{{id}}{{else}}star{{/if}}-2" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="2" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-2" class="star-label unlabel">
+			<span class="visuallyhidden">2 {{i18nMsg "uitk_rating_stars_text"}}</span>
+		</label>
+
+		<input type="radio" class="star-rating unradio visuallyhidden" id="{{#if id}}{{id}}{{else}}star{{/if}}-1" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="1" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-1" class="star-label unlabel">
+			<span class="visuallyhidden">1 {{i18nMsg "uitk_rating_stars_text"}}</span>
+		</label>
+
+		<input type="radio" class="reset-rating unradio" id="{{#if id}}{{id}}{{else}}star{{/if}}-clear" name="{{#if name}}{{name}}{{else}}starRating{{/if}}" value="0" checked="checked" />
+		<label for="{{#if id}}{{id}}{{else}}star{{/if}}-clear" class="reset-label unlabel visuallyhidden">{{i18nMsg "uitk_filter_reset"}}
+        </label>
+	</div>
+</fieldset>

@@ -1,0 +1,7 @@
+<li class="tab">
+	<a href="{{#if url}}{{{url}}}{{else}}#{{id}}{{/if}}" id="{{id}}-tab" {{#if selected}}data-initial-tab="true"{{/if}} class="{{#if selected}}on{{/if}} {{classes}}">
+        {{#if icon}}<i class="icon {{icon}}"></i>{{/if}}
+        <span class="tab-label">{{{i18nMsg label}}}</span>
+        <div class="tab-indicator"></div>
+    </a>
+</li>

@@ -1,0 +1,72 @@
+<passports>
+  <style>
+    card {
+      margin-bottom: 20px;
+    }
+  </style>
+  <div class="passports">
+    <div class="row">
+      <card class="col col-4" event-bus={eventBus} card-id={card.id} each={card in data.user_documents} is-interactable="true"
+        can-edit="true" on-fetch={onFetch} data-key="key1">
+        <yield to="header">
+          <span>Card number</span>
+          <br />
+          <span>XXXX-XXXX-XXXX-1234</span>
+        </yield>
+        <yield to="content">
+          <p>i am card</p>
+        </yield>
+      </card>
+    </div>
+  </div>
+
+  <script>
+    var eventBus, data, self;
+
+    self = this;
+    self.eventBus = riot.observable();
+    self.data = {
+      user_documents: [{
+        "id": 1000,
+        "type_code": "1",
+        "type_label": "Passport",
+        "number": "sdsada",
+        "code": "PASsdsada5327110",
+        "modification_date": 1527634842276
+      }]
+    };
+
+    self.eventBus.on('EDIT', function (cardId) {
+      console.log('edit', cardId);
+    });
+
+    self.eventBus.on('DELETE', function (cardId) {
+      console.log('delete', cardId);
+    });
+
+    self.eventBus.on('data', function (cardId) {
+      console.log('data', cardId);
+    });
+
+    onFetch(values) {
+      console.log(self);
+      self.opts.onFetch(values);
+    }
+
+    setInterval(function () {
+      var id;
+
+      id = Math.random() * 100;
+      self.data.user_documents.push({
+        "id": id,
+        "type_code": "1",
+        "type_label": "Passport",
+        "number": "sdsada",
+        "code": "PASsdsada5327110",
+        "modification_date": 1527634842276
+      });
+
+      self.update();
+    }, 10000);
+  </script>
+</passports>

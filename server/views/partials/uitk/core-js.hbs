@@ -1,0 +1,41 @@
+<script>
+    // Set up EG with EG from server
+    window.EG = {{json EG}} || {};
+
+    // Set up uitk with uitk from server (the rest of uitk is merged by uitk.js)
+    window.uitk = {{json uitk}} || {};
+
+    // Need to set this before any lib tries to do i18n. I18n.js has been modified as a result.
+    var I18n = I18n || {};
+    I18n.locale = EG.currentLocale;
+</script>
+
+{{#if sliderFix}}
+    {{{includeJsBundle bundleName="uitk-jquery" assetPath=uitkHostedAssetPath}}}
+{{else}}
+    {{{includeJsBundle bundleName="uitk-zepto" assetPath=uitkHostedAssetPath}}}
+{{/if}}
+
+{{{includeJsBundle bundleName="uitk-required-libs" assetPath=uitkHostedAssetPath}}}
+{{{includeJsBundle bundleName="uitk-backbone" assetPath=uitkHostedAssetPath}}}
+{{{includeJsBundle bundleName="uitk-handlebars" assetPath=uitkHostedAssetPath}}}
+{{{includeJsBundle bundleName="uitk-core" assetPath=uitkHostedAssetPath}}}
+
+{{i18nJs EG.currentLocale}}
+
+{{{includeJsBundle bundleName="uitk-libs" assetPath=uitkHostedAssetPath}}}
+
+{{#if sliderFix}}
+    {{{includeJsBundle bundleName="uitk-slider" assetPath=uitkHostedAssetPath}}}
+{{/if}}
+
+{{{includeJsBundle bundleName="uitk-vendors" assetPath=uitkHostedAssetPath}}}
+{{{includeJsBundle bundleName="uitk-core-app" assetPath=uitkHostedAssetPath}}}
+
+{{#if riotPilot}}
+    <script src="{{EG.assetPath}}/js/components/alert.tag" type="riot/tag"></script>
+    {{{includeJsBundle bundleName="uitk-riot" assetPath=uitkHostedAssetPath}}}
+{{/if}}
+
+{{{includeJsBundle bundleName="uitk-analytics" assetPath=uitkHostedAssetPath}}}
+<script src='https://cdnil.clarisite.com/egencia/detector-dom.min.js' id='_cls_detector' data-clsconfig='reportURI=https://report.egencia.glassboxdigital.io/glassbox/reporting/92567D9E-8C6C-0846-8C2A-C71818A7C0D8/cls_report;maskingMode=whitelist;maskClassList=replay-safe;recordScrolls=true;recordMouseMoves=true'></script>

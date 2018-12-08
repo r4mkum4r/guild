@@ -1,0 +1,28 @@
+{{#unless ../uitk.adapt.webView}}
+<div id="global-header">
+    <div class="site-content">
+        <div class="site-navigation">
+            <div id="site-logo">
+                <a id="primary-nav-home" href="{{home.url}}" class="first">
+                    <span class="visuallyhidden">Egencia</span>
+                </a>
+            </div>
+            {{#if ../uitk.adapt.smallScreen}}
+                {{> partials/uitk/header-primary-nav-small-screen}}
+            {{else}}
+                {{> partials/uitk/header-primary-nav-large-screen}}
+            {{/if}}
+            <div id="site-utilities">
+                {{#if ../globalSearch}}
+                    <a id="global-search" class="left nav-item" href="#" data-control="modal" data-modal-id="global-search"><i class="icon icon-searchalt"></i></a>
+                {{/if}}
+                {{#if ../uitk.adapt.smallScreen}}
+                    {{> partials/uitk/header-account-nav-small-screen}}
+                {{else}}
+                    {{> partials/uitk/header-account-nav-large-screen}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/unless}}

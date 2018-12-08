@@ -1,0 +1,18 @@
+<footer class="modal-footer cf">
+    {{#if confirm}}
+        <div class="modal-footer-btns">
+            <button id="modal-cancel" class="btn btn-text-sub-action btn-med btn-no-margin">
+                <span class="btn-label">{{i18nMsg cancelText}}</span>
+            </button>
+            <button id="modal-confirm" class="btn btn-action btn-med btn-no-margin">
+                <span class="btn-label">{{i18nMsg confirmText}}</span>
+            </button>
+        </div>
+    {{/if}}
+    {{#if optOut}}
+        <div class="input-group opt-out">
+            <input id="modal-opt-out" name="{{id}}-opt-out" type="checkbox">
+            <label for="modal-opt-out" class="modal-opt-out-label">{{i18nMsg optOutText}}</label>
+        </div>
+    {{/if}}
+</footer>

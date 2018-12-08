@@ -1,0 +1,7 @@
+<section class="content-slider-controls">
+    <ul class="content-slider-nav">
+        {{#each pages}}
+            <li><button type="button" {{#if isCurrent}}class="current"{{/if}}><span class="visuallyhidden">page number {{pageNum}}</span></button></li>
+        {{/each}}
+    </ul>
+</section>

@@ -1,0 +1,18 @@
+<div id="search-bar" data-control="search-bar">
+    <div id="search-bar-display">
+        <div class="right">
+            <button id="search-bar-change-search" class="btn btn-text-action btn-med btn-no-margin">
+                <span id="search-bar-change-search-btn" class="btn-label">{{i18nMsg "uitk_change_search"}}</span>
+                <span id="search-bar-change-search-icon" class="btn-label"><i class="icon icon-searchalt"></i></span>
+            </button>
+        </div>
+        <div id="search-bar-responsive-wrap-outer" class="text">
+            <h2 id="search-bar-content-primary">{{{primary}}}</h2>
+            <div id="search-bar-responsive-wrap-inner">
+                <h5 id="search-bar-content-secondary" class="text-shade1">{{{secondary}}}</h5>
+                <h5 id="search-bar-content-tertiary" class="text-shade2">{{{tertiary}}}</h5>
+            </div>
+        </div>
+    </div>
+    <div id="search-bar-edit" class="hidden">{{> @partial-block}}</div>
+</div>

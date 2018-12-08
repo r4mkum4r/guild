@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prototype Example</title>
+  <link rel="stylesheet" href="./assets/styles/uitk-core.css">
+  <style>
+    /* Add additional styles here */
+  .btn-small.btn-text-action .btn-label{
+    padding: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="site-content">
+    <div id="arrange-and-approve-container" class="row">
+      <div class="col col-8 nested-grid">
+        <div class="box">
+          <div class="box-padded">
+            <div id="arrange-and-approve-content" class="profile-section profile-field-section">
+              <div class="row">
+                <div class="col col-3 hide-small-screen ">
+                  <div class="profile-label right">
+                    <h5 class="sub-header">
+                      Arrangers
+                    </h5>
+                    <button type="button" id="assign-arrangers" class="modal-opener btn btn-text-action btn-small btn-no-margin"
+                      data-target-modal="arrangers">
+                      <span class="btn-label no-side-padding">Manage</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col col-4">
+                  <div id="arrangers" class="col-10 middled">
+                    No Arranger selected
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-3 hide-small-screen ">
+                  <div class="profile-label right">
+                    <h5 class="sub-header">
+                      Approvers
+                    </h5>
+                    <button type="button" id="assign-approvers" class="modal-opener btn btn-text-action btn-small btn-no-margin"
+                      data-target-modal="approvers">
+                      <span class="btn-label no-side-padding">Manage</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col col-4">
+                  <div id="approvers" class="col-10 middled">
+                    No Approver selected
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts only below -->
+  <script src="assets/js/prototype/setup.js"></script>
+  <script src="assets/js/dependencies/uitk-required-libs.js"></script>
+  <script src="assets/js/dependencies/uitk-backbone.js"></script>
+  <script src="assets/js/prototype/protokit-handlebars.js"></script>
+  <script src="assets/js/dependencies/uitk-core.js"></script>
+  <script src="assets/js/prototype/translations.js"></script>
+  <script src="assets/js/dependencies/uitk-libs.js"></script>
+  <script src="assets/js/dependencies/uitk-core-app.js"></script>
+
+  <!-- Deps -->
+  <script src="../app/bower_components/vue/dist/vue.min.js"></script>
+  <!-- Components -->
+  <script src="components/vanilla/assign-users.js"></script>
+  <script>
+    var assignUsers;
+
+    assignUsers = new AssignUsers({
+      modalOptions: {
+        modalId: 'assign-arrangers'
+      },
+      search: {
+        placeholder: uitk.i18n.msg('arrange_and_approve_search_arrangers'),
+        limit: 2
+      },
+      canSearch: true,
+      templateData: {},
+      // dataAdapter: tabsInfo.all.dataAdapter,
+      onSave: function () {
+        self.renderSelectedArrangers();
+      }
+    });
+
+    $('#assign-arrangers').on('click', function (evt) {
+      showApprovers();
+    });
+
+    function showApprovers() {
+      assignUsers.setResultsContainer('#arrangers');
+      assignUsers.render([{
+        "selected": false,
+        "first_name": "Adam",
+        "last_name": "TestFour",
+        "email": "vyomtesthql9huw5wy@egencia.com",
+        "user_id": 6404809,
+        "value": "Adam TestFour ( vyomtesthql9huw5wy@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Adam",
+        "last_name": "TestOne",
+        "email": "vyomtestuftpxd778w@egencia.com",
+        "user_id": 6464970,
+        "value": "Adam TestOne ( vyomtestuftpxd778w@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Adam",
+        "last_name": "TestTen",
+        "email": "vyomtestgxk4yk2f5y@egencia.com",
+        "user_id": 6484987,
+        "value": "Adam TestTen ( vyomtestgxk4yk2f5y@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Adam",
+        "last_name": "TestFour",
+        "email": "vyomtestpugi8pensd@egencia.com",
+        "user_id": 6486691,
+        "value": "Adam TestFour ( vyomtestpugi8pensd@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestOne",
+        "email": "vyomtest95sghyg8tu@egencia.com",
+        "user_id": 6472003,
+        "value": "Amit TestOne ( vyomtest95sghyg8tu@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestTwo",
+        "email": "vyomtestdjplwjicyg@egencia.com",
+        "user_id": 6408616,
+        "value": "Amit TestTwo ( vyomtestdjplwjicyg@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestEight",
+        "email": "vyomtestf1kizm6i5q@egencia.com",
+        "user_id": 6408973,
+        "value": "Amit TestEight ( vyomtestf1kizm6i5q@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestSix",
+        "email": "vyomtestwnjujtqkij@egencia.com",
+        "user_id": 6408470,
+        "value": "Amit TestSix ( vyomtestwnjujtqkij@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestEight",
+        "email": "vyomtest27txnove7d@egencia.com",
+        "user_id": 6408759,
+        "value": "Amit TestEight ( vyomtest27txnove7d@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestOne",
+        "email": "vyomtest90ndqm84fh@egencia.com",
+        "user_id": 6459635,
+        "value": "Amit TestOne ( vyomtest90ndqm84fh@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestThree",
+        "email": "vyomtest2yyx3budey@egencia.com",
+        "user_id": 6461022,
+        "value": "Amit TestThree ( vyomtest2yyx3budey@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestSix",
+        "email": "vyomtest5msqcxci9g@egencia.com",
+        "user_id": 6465304,
+        "value": "Amit TestSix ( vyomtest5msqcxci9g@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestSix",
+        "email": "vyomtestw7ltfraw6s@egencia.com",
+        "user_id": 6453392,
+        "value": "Amit TestSix ( vyomtestw7ltfraw6s@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestFour",
+        "email": "yashika26789",
+        "user_id": 6407928,
+        "value": "Amit TestFour ( yashika26789 )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestTen",
+        "email": "vyomtestavqxuwq5gs@egencia.com",
+        "user_id": 6462519,
+        "value": "Amit TestTen ( vyomtestavqxuwq5gs@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestSix",
+        "email": "vyomtestkqr40hkxxp@egencia.com",
+        "user_id": 6460763,
+        "value": "Amit TestSix ( vyomtestkqr40hkxxp@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Amit",
+        "last_name": "TestThree",
+        "email": "vyomtestkwuydsdlxl@egencia.com",
+        "user_id": 6472392,
+        "value": "Amit TestThree ( vyomtestkwuydsdlxl@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Bill",
+        "last_name": "TestNine",
+        "email": "vyomtestf3szakpv7b@egencia.com",
+        "user_id": 6410872,
+        "value": "Bill TestNine ( vyomtestf3szakpv7b@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Bill",
+        "last_name": "TestOne",
+        "email": "vyomtest1lk4fhoqub@egencia.com",
+        "user_id": 6432283,
+        "value": "Bill TestOne ( vyomtest1lk4fhoqub@egencia.com )",
+        "type": "all"
+      }, {
+        "selected": false,
+        "first_name": "Bill",
+        "last_name": "TestNine",
+        "email": "vyomtestrrpiyunrdm@egencia.com",
+        "user_id": 6455216,
+        "value": "Bill TestNine ( vyomtestrrpiyunrdm@egencia.com )",
+        "type": "all"
+      }]);
+    }
+  </script>
+</body>
+
+</html>

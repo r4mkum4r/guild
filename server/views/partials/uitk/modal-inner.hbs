@@ -1,0 +1,22 @@
+<div class="modal-inner{{#if panel}} panel panel-{{panelSize}}{{/if}}{{#if title}} modal-with-title{{/if}}" role="dialog"{{#if title}} aria-labelledby="{{id}}-title"{{/if}}{{#unless content}} aria-busy="true"{{/unless}}>
+    {{#if alert}}
+        {{> partials/uitk/modal-alert}}
+    {{/if}}
+    {{#if title}}
+        {{> partials/uitk/modal-title}}
+    {{/if}}
+    <div class="modal-body cf"></div>
+    <div class="modal-loader">
+        <p>
+            <span class="loader loader-light loader-secondary loading" title="Loading..."></span>
+        </p>
+    </div>
+    {{#if footer}}
+        {{> partials/uitk/modal-footer}}
+    {{/if}}
+    {{#unless confirm}}
+        {{#unless panel}}
+            <i class="modal-close icon icon-close"></i>
+        {{/unless}}
+    {{/unless}}
+</div>

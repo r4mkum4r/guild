@@ -1,0 +1,26 @@
+<li{{#if id}} id="{{id}}"{{/if}} class="segment segment-result{{#if segmentInfoPane.toggle}} toggle{{/if}}{{#if segmentInfoPane.animation}} {{segmentInfoPane.animation}}{{/if}}{{classes}}" {{{dataAttributes}}}>
+  {{#if target}}
+    <a href="{{target}}"{{#if linkedTarget}} target="{{linkedTarget}}"{{/if}} class="target">
+  {{/if}}
+  {{{content}}}
+  {{#with segmentInfoPane}}
+      <article{{#if id}} id="{{{id}}}"{{/if}} {{{dataAttributes}}}
+          class="segment-info info cf{{#if toggle}} target toggle-trigger{{/if}}{{classes}}"
+          {{#if toggle}} data-control="toggle" {{/if}}
+          {{#if togglePaneID}} data-content-id="{{{togglePaneID}}}" {{/if}}
+          {{#if animationNotFade}} data-transition="{{{animation}}}" {{/if}}>
+        {{{content}}}
+      </article>
+  {{/with}}
+  {{#if segmentTogglePane}}
+      <section{{#if segmentInfoPane.togglePaneID}} id="{{{segmentInfoPane.togglePaneID}}}"{{/if}}
+        {{#with segmentTogglePane}}
+          class="segment-toggle info toggle-pane{{{classes}}}" {{{dataAttributes}}}>
+            {{{content}}}
+        {{/with}}
+      </section>
+  {{/if}}
+  {{#if target}}
+    </a>
+  {{/if}}
+</li>

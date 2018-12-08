@@ -1,0 +1,43 @@
+<figure
+    {{#if id}}id="{{id}}"{{/if}}
+    class="{{cssClass}}{{classes}}"
+    {{#unless isYouTube}}data-media-type="{{mediaType}}"{{/unless}}
+    {{#if mediaId}}data-control="media" data-media-id="{{mediaId}}" data-media-type="{{mediaType}}"{{/if}}
+    {{#if mediaOptions}}data-media-options="{{mediaOptions}}"{{/if}}
+    {{#if lazy}}data-lazy="{{lazy}}"{{/if}}
+    {{#if late}}data-late="{{late}}"{{/if}}
+    {{#if downgrade}}data-downgrade="{{downgrade}}"{{/if}}
+    {{#if path}}data-path="{{path}}"{{/if}}
+    {{#if src}}data-src="{{src}}"{{/if}}
+    {{#if srcSet}}data-srcset="{{srcSet}}"{{/if}}
+    {{#if isImage}}{{#if alt}}data-alt="{{alt}}"{{/if}}{{/if}}
+    {{#if aspectRatio}}data-aspect-ratio="{{aspectRatio}}"{{/if}}
+    {{#if svgFallback}}data-svgfallback="{{svgFallback}}"{{/if}}
+    {{#if videoParameters}}data-video-parameters="{{videoParameters}}"{{/if}}
+        data-class="tile-media"
+    {{{dataAttributes}}}>
+
+    {{#if isImage}}
+        {{#if src}}
+            {{#if lazyIsTrue}}
+                <noscript>
+                    <img src="{{src}}" alt="{{#if alt}}{{{alt}}}{{/if}}" class="tile-media" />
+                </noscript>
+            {{else}}
+                <img src="{{src}}" alt="{{#if alt}}{{{alt}}}{{/if}}" class="tile-media"/>
+            {{/if}}
+        {{/if}}
+    {{/if}}
+
+    {{#if caption}}
+        <figcaption class="{{#if captionClass}}{{{captionClass}}}{{else}}image-caption{{/if}}">{{{caption}}}</figcaption>
+    {{/if}}
+
+    {{#if useMediaLoader}}
+        {{#with mediaLoader}}
+            <span class="media-loader">{{> partials/uitk/loader-tag}}</span>
+        {{/with}}
+    {{/if}}
+
+    {{{content}}}
+</figure>

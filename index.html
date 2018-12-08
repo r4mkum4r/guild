@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prototype Example</title>
+  <link rel="stylesheet" href="./static/assets/styles/uitk-core.css">
+  <link rel="stylesheet" href="./static/assets/styles/styles.css">
+  <style>
+    /* Add additional styles here */
+    .btn-small.btn-text-action .btn-label {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="site-content">
+    <div id="arrange-and-approve-container" class="row">
+      <div class="col col-8 nested-grid">
+        <div class="box">
+          <div class="box-padded">
+            <div id="arrange-and-approve-content" class="profile-section profile-field-section">
+              <div class="row">
+                <div class="col col-3 hide-small-screen ">
+                  <div class="profile-label right">
+                    <h5 class="sub-header">
+                      Arrangers
+                    </h5>
+                    <button type="button" id="assign-arrangers" class="modal-opener btn btn-text-action btn-small btn-no-margin"
+                      data-target-modal="arrangers">
+                      <span class="btn-label no-side-padding">Manage</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col col-4">
+                  <div id="arrangers" class="col-10 middled">
+                    No Arranger selected
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-3 hide-small-screen ">
+                  <div class="profile-label right">
+                    <h5 class="sub-header">
+                      Approvers
+                    </h5>
+                    <button type="button" id="assign-approvers" class="modal-opener btn btn-text-action btn-small btn-no-margin"
+                      data-target-modal="approvers">
+                      <span class="btn-label no-side-padding">Manage</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col col-4">
+                  <div id="approvers" class="col-10 middled">
+                    No Approver selected
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scripts only below -->
+  <script src="static/assets/js/prototype/setup.js"></script>
+  <script src="static/assets/js/dependencies/uitk-required-libs.js"></script>
+  <script src="static/assets/js/dependencies/uitk-backbone.js"></script>
+  <script src="static/assets/js/prototype/protokit-handlebars.js"></script>
+  <script src="static/assets/js/dependencies/uitk-core.js"></script>
+  <script src="static/assets/js/prototype/translations.js"></script>
+  <script src="static/assets/js/dependencies/uitk-libs.js"></script>
+  <script src="static/assets/js/dependencies/uitk-core-app.js"></script>
+  <script src="static/templates.js"></script>
+
+  <!-- Deps -->
+  <script src="./app/bower_components/vue/dist/vue.js"></script>
+  <script src="./static/components/vue/assign-arrangers.js" type="module"></script>
+  <script src="./static/main.js" type="module"></script>
+</body>
+
+</html>

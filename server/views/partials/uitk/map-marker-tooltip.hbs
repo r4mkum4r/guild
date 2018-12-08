@@ -1,0 +1,12 @@
+<div class="uitk-tooltip active-tooltip theme-map-marker show-arrow on top center marker marker-tooltip
+{{#if price}} marker-price{{/if}}
+{{#if oop}} oop{{/if}}
+{{#if preferred}} preferred{{/if}}
+{{#if soldOut}} marker-sold-out{{/if}}
+{{#if color}} marker-{{color}}{{/if}}">
+    <div class="tooltip-inner">
+        {{#if price}}{{{i18nCurrency price.amount code=price.currency round=true}}}{{else}}{{{name}}}{{/if}}
+        <div class="info-window">{{{content}}}</div>
+    </div>
+    <span class='tooltip-arrow'></span>
+</div>

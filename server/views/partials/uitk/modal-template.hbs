@@ -1,0 +1,7 @@
+<div class="modal-wrap{{#if theme}} theme-{{theme}}{{/if}}" id="modal-{{id}}">
+{{#with this}}
+    {{!-- maven precompiler complains when this is not wrapped --}}
+    {{> partials/uitk/modal-inner}}
+{{/with}}
+</div>
+{{> partials/uitk/modal-background}}

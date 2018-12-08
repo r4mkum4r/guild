@@ -1,0 +1,33 @@
+<dl>
+    {{#each resultsByCategory}}
+        {{#if @first}}
+        <dt class="category-name">{{@key}}</dt>
+        <dd class="category-results">
+            <ul class="results">
+                {{#each this}}
+                    <li class="results-item">
+                        <a href="#" class="{{#if @first}}highlight{{/if}}" data-id="{{id}}" {{#if category}}data-type="{{category}}"{{else}}data-type="OTHER"{{/if}} data-value="{{value}}" data-result="{{result}}" data-autocomplete-id="{{../autocompleteId}}">
+                            <div class="details">{{{display_value}}}</div>
+                            {{#if opt_display_value}}<div class="optional-details">{{{opt_display_value}}}</div>{{/if}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </dd>
+        {{else}}
+        <dt class="category-name">{{@key}}</dt>
+        <dd class="category-results">
+            <ul class="results">
+                {{#each this}}
+                    <li class="results-item">
+                        <a href="#" data-id="{{id}}" {{#if category}}data-type="{{category}}"{{else}}data-type="OTHER"{{/if}} data-value="{{value}}" data-result="{{result}}" data-autocomplete-id="{{../autocompleteId}}">
+                            <div class="details">{{{display_value}}}</div>
+                            {{#if opt_display_value}}<div class="optional-details">{{{opt_display_value}}}</div>{{/if}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </dd>
+        {{/if}}
+    {{/each}}
+</dl>

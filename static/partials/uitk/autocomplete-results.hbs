@@ -1,0 +1,10 @@
+<ul class="results">
+    {{#each results}}
+        <li class="results-item">
+            <a href="#" data-id="{{id}}" class="{{#if @first}}{{#if ../highlightFirst}}highlight{{/if}}{{/if}}" {{#if category}}data-type="{{category}}"{{else}}data-type="OTHER"{{/if}} data-value="{{value}}" data-result="{{result}}"  data-autocomplete-id="{{../autocompleteId}}">
+                <div class="details {{#if child}}child-suggestion{{/if}}">{{#if icon}}<span class="icon icon-{{icon}}"></span>{{/if}}{{{display_value}}}</div>
+                {{#if opt_display_value}}<div class="optional-details">{{{opt_display_value}}}</div>{{/if}}
+            </a>
+        </li>
+    {{/each}}
+</ul>

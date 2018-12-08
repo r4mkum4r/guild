@@ -1,0 +1,20 @@
+{{#if isLink}}
+    <a
+{{else}}
+    <button
+{{/if}}
+{{#if tabIndex}} tabIndex={{tabIndex}}{{/if}}
+{{#if href}} href="{{href}}"{{/if}}
+{{#unless isLink}} type="{{type}}"{{/unless}}
+{{#if title}} title="{{title}}"{{/if}}
+{{#if btnTypeClose}} data-control="remove" data-target-id="{{targetId}}"{{/if}}
+class="{{cssClass}} {{classes}}{{#if isDisabledLink}} disabled{{/if}}"
+{{#if id}} id="{{id}}"{{/if}}
+{{#if isDisabledButton}} disabled{{/if}}
+{{#if dataAttributes}}{{{dataAttributes}}}{{/if}}>
+        <span class="btn-label">{{{content}}}</span>
+{{#if isLink}}
+    </a>
+{{else}}
+    </button>
+{{/if}}

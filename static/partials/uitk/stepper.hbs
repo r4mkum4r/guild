@@ -1,0 +1,5 @@
+<div class="stepper">
+    <span class="input stepper-control stepper-btn stepper-down{{#if disabled}} disabled{{/if}}"><i class='icon icon-subtract'></i></span>
+    <input type="text" class="input stepper-control stepper-input" data-control="stepper" id="{{id}}" name="{{name}}" value="{{#if value}}{{value}}{{else}}{{#if min}}{{min}}{{else}}0{{/if}}{{/if}}" {{#if value}}data-value="{{value}}"{{/if}} {{#if step}}data-step="{{step}}"{{/if}} {{#if min}}data-min="{{min}}"{{/if}} {{#if max}}data-max="{{max}}"{{/if}} {{#if disabled}}disabled{{/if}}>
+    <span class="input stepper-control stepper-btn stepper-up{{#if disabled}} disabled{{/if}}"><i class='icon icon-add'></i></span>
+</div>

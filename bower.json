@@ -1,0 +1,21 @@
+{
+  "name": "GUILD",
+  "authors": [
+    "raramakrishna <raramakrishna@egencia.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}

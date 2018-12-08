@@ -1,0 +1,14 @@
+<div class="pill {{#if theme}}pill-{{theme}}{{else}}pill-default{{/if}}">
+    {{#if icon}}
+        <i class="icon icon-{{icon}}"></i>
+    {{/if}}
+    {{#if url}}
+        <img src="{{url}}"/>
+    {{/if}}
+    {{#if msg}}
+        <span>{{msg}}</span>
+    {{/if}}
+    {{#if label}}
+        <span>{{i18nMsg label}}</span>
+    {{/if}}
+</div>

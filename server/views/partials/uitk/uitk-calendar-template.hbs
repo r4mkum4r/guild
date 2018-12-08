@@ -1,0 +1,70 @@
+<div class="cal {{#if annual}}annual{{/if}}" data-js-theme="{{#if annual}}annual-{{/if}}calendar">
+    {{#if annual}}
+        <section class="cal-section-year">
+            <div class="year-control">
+                <button class="btn btn-text-sub-action btn-med next-year">
+                    <span class="btn-label"><i class="icon icon-toggle0"></i><span class="visuallyhidden">{{i18nMsg "uitk_calendar_next_month" bundle="uitk"}}</span></span>
+                </button>
+                <h1 class="font-light year">{{year1}}</h1>
+                <button class="btn btn-text-sub-action btn-med prev-year">
+                    <span class="btn-label"><i class="icon icon-toggle180"></i><span class="visuallyhidden">{{i18nMsg "calendar_prev_month" bundle="uitk"}}</span></span>
+                </button>
+            </div>
+        </section>
+    {{/if}}
+    <div class="cal-section-wrapper">
+        {{#if prevButton}}
+            <button class="btn btn-text-sub-action btn-small prev">
+                <span class="btn-label"><span class="icon icon-toggle270"></span><span class="visuallyhidden">{{i18nMsg "calendar_prev_month" bundle="uitk"}}</span></span>
+            </button>
+        {{/if}}
+        {{#if nextButton}}
+            <button class="btn btn-text-sub-action btn-small next">
+                <span class="btn-label"><span class="icon icon-toggle90"></span><span class="visuallyhidden">{{i18nMsg "calendar_next_month" bundle="uitk"}}</span></span>
+            </button>
+        {{/if}}
+        <section class="cal-section">
+            <header>
+                <h5>
+                    <span class="month">{{month1}}</span>
+                    <span class="year">{{year1}}</span>
+                </h5>
+                <ul class="cal-days medium">
+                    {{{calDays}}}
+                </ul>
+            </header>
+            <ul class="cal-dates medium">
+                {{{calDates1}}}
+            </ul>
+        </section>
+        <hr class="vertical-divider {{newYear}}">
+        <section class="cal-section {{newYear}}">
+            <header>
+                <h5>
+                    <span class="month">{{month2}}</span>
+                    <span class="year">{{year2}}</span>
+                </h5>
+                <ul class="cal-days medium">
+                    {{{calDays}}}
+                </ul>
+            </header>
+            <ul class="cal-dates medium">
+                {{{calDates2}}}
+            </ul>
+        </section>
+        {{#if timepicker}}
+            <div class="cal-timepicker">
+                {{#if time}}
+                    {{> partials/uitk/timepicker time}}
+                {{else}}
+                    {{#if startTime}}
+                        {{> partials/uitk/timepicker startTime}}
+                    {{/if}}
+                    {{#if endTime}}
+                        {{> partials/uitk/timepicker endTime}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+</div>

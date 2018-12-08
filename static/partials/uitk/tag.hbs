@@ -1,0 +1,8 @@
+<span id="{{id}}" data-type="{{type}}" data-value="{{value}}" class="tag{{#if bgColor}}{{bgColor}}{{else}} tag-color-gray{{/if}} {{cssClass}} {{classes}} {{size}}">
+    <span class="tag-title">
+        {{{label}}}
+    </span>
+    {{#unless remove}}
+        <i class="{{#if autocomplete}}autocomplete-{{/if}}tag-remove"></i>
+    {{/unless}}
+</span>

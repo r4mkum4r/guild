@@ -1,0 +1,38 @@
+<div id="{{id}}" class="filters box {{#if filtered}}filtered{{/if}}" data-control="filters" {{#if submit}}data-mode="submit"{{/if}} {{#if filtered}}data-filtered="true"{{/if}}>
+    <div class="filter-menu-wrapper box-header">
+        <ul class="filter-menu">
+            <li class="filter-menu-icon">
+                <i class="icon icon-filteralt"></i>
+                {{#if wantFiltersText}}
+                    <span>{{i18nMsg "uitk_filter_menu_txt"}}</span>
+                {{/if}}
+            </li>
+            {{#each filters}}
+                <li id="{{categoryId}}" class="filter-category {{#if filtered}}filtered{{/if}}">
+                    <h5 class="filter-label sub-header">{{i18nMsg label}}</h5>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="filter-body">
+        {{#each filters}}
+            <div data-content-category-id="{{categoryId}}" class="filter-content box-padded">
+                {{{content}}}
+            </div>
+        {{/each}}
+        <div class="filter-body-menu cf box-footer">
+            <button class="filter-reset left btn btn-text-sub-action btn-med btn-no-margin">
+                <span class="btn-label">{{#if submit}}{{i18nMsg "uitk_filter_reset_all"}}{{else}}{{i18nMsg "uitk_filter_reset"}}{{/if}}</span>
+            </button>
+            {{#if submit}}
+                <button class="filter-apply right btn btn-text-action btn-med btn-no-margin">
+                    <span class="btn-label">{{i18nMsg "uitk_filter_apply"}}</span>
+                </button>
+            {{else}}
+                <button class="filter-close right btn btn-text-action btn-med btn-no-margin">
+                    <span class="btn-label">{{i18nMsg "uitk_filter_done"}}</span>
+                </button>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+{{#unless ../webView}}
+    <div id="footer" class="cf">
+        <div class="site-navigation row">
+            <div class="col col-12 align-center">
+                <ul class="cf">
+                    {{#with footer.aboutEgenciaId}}
+                        <li>
+                            <a id="{{id}}" href="{{url}}">{{label}}</a>
+                        </li>
+                    {{/with}}
+                    {{#with footer.privacyPolicyId}}
+                        <li>
+                            <a id="{{id}}" href="{{url}}"><span class="hide-small-screen">{{label}}</span><span class="hide-large-screen hide-medium-screen">{{labelalt}}</span></a>
+                        </li>
+                    {{/with}}
+                    {{#with footer.promiseId}}
+                        <li class="hide-small-screen">
+                            <a id="{{id}}" href="{{url}}">{{label}}</a>
+                        </li>
+                    {{/with}}
+                    {{#with footer.termsOfUseId}}
+                        <li>
+                            <a id="{{id}}" href="{{url}}"><span class="hide-small-screen">{{label}}</span><span class="hide-large-screen hide-medium-screen">{{labelalt}}</a>
+                        </li>
+                    {{/with}}
+                    {{#with footer.imprintId}}
+                        <li>
+                            <a id="{{id}}" href="{{url}}">{{label}}</a>
+                        </li>
+                    {{/with}}
+                    {{#with footer.mobileId}}
+                        <li class="hide-small-screen">
+                            <a id="{{id}}" href="{{url}}">{{label}}</a>
+                        </li>
+                    {{/with}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12 align-center">
+                <div id="footer-copyright">
+                    <h6>{{{footer.copyrightId.label}}}</h6>
+                    <div><i class="icon icon-egencia-birdalt"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/unless}}

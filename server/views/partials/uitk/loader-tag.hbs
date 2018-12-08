@@ -1,0 +1,5 @@
+{{#if overlayIsTrue}}<div class="loader-overlay loading">{{/if}}
+  <span {{#if id}}id="{{id}}"{{/if}}
+      class="loader{{#if overlayIsTrue}} loader-dark{{else}} {{cssClass}}{{/if}}{{classes}}"{{{dataAttributes}}} title="Loading...">
+  </span>
+{{#if overlayIsTrue}}</div>{{/if}}
