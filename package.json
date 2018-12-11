@@ -1,0 +1,37 @@
+{
+  "name": "guild",
+  "version": "1.0.0",
+  "description": "[dropbox]: https://www.dropbox.com/sh/xocj0qbfdweevy1/AADiZPbVmDRGk3zN_YE8jkW-a?dl=0 [bitbucket]: https://stash.sea.corp.expecn.com/projects/EGES/repos/protokit/browse [uitk doc site]: https://wwwegenciacom.int-maui.sb.karmalab.net/uitoolkit-doc-site/ [introduction]: #introduction [get started]: #get-started [setup machine]: #setup-machine [start prototype]: #start-prototype [gulp]: #gulp [less]: #write-less [sync uitk]: #sync-uitk [issues]: #issues [changelog]: #changelog [todo]: #todo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --color --progress --config config/webpack.config.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r4mkum4r/guild.git"
+  },
+  "author": "raramakrishna@egencia.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r4mkum4r/guild/issues"
+  },
+  "homepage": "https://github.com/r4mkum4r/guild#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "vue-loader": "^14.2.2",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.19"
+  }
+}
