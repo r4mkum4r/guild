@@ -1,4 +1,3 @@
-// import Vue from 'vue';
 import AssignArrangers from './components/vue/assign-arrangers.js';
 
 const MODAL_TMPL = Handlebars.templates['partials/common/components/user-picker'];
@@ -16,10 +15,7 @@ const MODAL_OPTIONS = {
 $('#assign-approvers').on('click', assignApprovers);
 $('#assign-arrangers').on('click', assignApprovers);
 
-
 uitk.subscribe('modal.appended', onModalOpen);
-
-// assignApprovers();
 
 function assignApprovers() {
   let modal;
@@ -30,15 +26,10 @@ function assignApprovers() {
 }
 
 function onModalOpen() {
-
-  httpVueLoader.register(Vue, '/static/components/vue/hello-world.vue');
-
   new Vue({
-    el: '#user-picker-content'
+    el: '#user-picker-content',
+    components: {
+      AssignArrangers
+    }
   });
 }
-
-// new Vue({
-//   el: '#app',
-//   components: {AssignArrangers}
-// });
